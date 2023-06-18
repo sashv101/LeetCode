@@ -1,0 +1,19 @@
+public static int size (Node node)
+    {
+
+//Base case
+      if (node == null)
+	{
+	  return 0;
+	}
+
+//Calculate left subtree size
+      int lsize = size (node.left);
+
+//Calculate right subtree size
+      int rsize = size (node.right);
+
+//Size of tree is left subtree size + right subtree size + 1 (for root node)
+      return lsize + rsize + 1;
+
+    }
