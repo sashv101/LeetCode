@@ -1,0 +1,18 @@
+Why i = i + 2 ?
+Because, we are going to change only numbers
+
+Why subtract by '0'?
+Because, we are doing arithmetic operation on ASCII code and even though 1 in the string "a1c1e1" looks integer but, it's still a character so,
+if we add 'a' + '1' then, it's actually 97 + 49 = 146 .. so, (char) ( 'a' + '1') will show character with ASCII value 146
+
+class Solution {
+       public static String replaceDigits(String s) {
+
+		char[] charArray = s.toCharArray();
+		for(int i = 1; i<charArray.length; i = i + 2) {
+		  charArray[i] = (char) (charArray[i - 1] + charArray[i] - '0');
+		}
+		return String.valueOf(charArray);
+  }     
+   
+}
