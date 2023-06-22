@@ -1,0 +1,30 @@
+class Solution {
+    public String removeTrailingZeros(String num) {
+    
+  Method-1
+        // char[] charArray= num.toCharArray();
+
+         int n=num.length();
+        // int i;
+        // for(i=n-1;i>=0;i--){
+        //     if(charArray[i]=='0'){
+        //         continue;
+        //     }
+        //     else{
+        //         break;
+        //     }
+        // }
+        // return String.valueOf(charArray).substring(0,i+1);
+
+Method-2
+
+        while(--n>0){ // this is good use of --n
+            if(num.charAt(n)!='0'){
+                break;
+            }
+            
+        }
+        return num.substring(0,++n); // this is also a good use of ++n
+        // remember this method
+    }
+}
