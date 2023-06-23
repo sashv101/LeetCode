@@ -1,0 +1,18 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        // 97 to 122
+        int n=sentence.length();
+        char[] charArray = sentence.toCharArray();
+        int[] temp= new int[123];
+        for(char c:charArray){
+            temp[c]+=1;
+        }
+
+    for(int i=97;i<123;i++){
+        if(temp[i]==0){
+            return false;
+        }
+    }
+        return true;
+    }
+}
