@@ -1,0 +1,24 @@
+class Solution {
+HashMap<Integer,Integer> h = new HashMap<>();
+    public void rotate(int[][] matrix) {
+        int n1=matrix.length;
+        int n2=matrix[0].length;
+
+        for(int i=0;i<n1;i++){
+            for(int j=i;j<n2;j++){ // important thing is j starting from i
+                int temp=matrix[i][j];
+                matrix[i][j]=matrix[j][i];
+                matrix[j][i]=temp;
+            }
+        }
+
+        for(int i=0;i<n1;i++){
+            for(int j=0;j<n2/2;j++){ // important is that j till n2/2 only simple but important
+                int temp=matrix[i][j];
+                matrix[i][j]=matrix[i][n2-j-1];
+                matrix[i][n2-j-1]=temp;
+            }
+        }
+        
+    }
+}
