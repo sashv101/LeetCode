@@ -1,0 +1,26 @@
+public class Codec {
+
+    // Encodes a URL to a shortened URL.
+    public String encode(String longUrl) {
+        StringBuilder ans = new StringBuilder("");
+        for(int i=0;i<longUrl.length();i++){
+            char c = longUrl.charAt(i);
+            c=(char)(c+'0');
+            ans.append(c);
+        }
+        return ans.toString();
+        
+    }
+
+    // Decodes a shortened URL to its original URL.
+    public String decode(String shortUrl) {
+        StringBuilder ans = new StringBuilder("");
+        for(int i=0;i<shortUrl.length();i++){
+            char c = shortUrl.charAt(i);
+            c=(char)(c-'0');
+            ans.append(c);
+        }
+        return ans.toString();
+        
+    }
+}
