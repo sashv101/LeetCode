@@ -1,0 +1,25 @@
+class Solution {
+    public int[] diStringMatch(String s) {
+        int[] ans = new int[s.length()+1];
+        int n=ans.length;
+        int end=n-1;
+        int start=0;
+        int j=0;
+        while(j<n-1 ){
+            char c = s.charAt(j);
+            if(c=='I'){
+                ans[j]=start;
+                start++; 
+
+            }
+            else{
+                ans[j]=end;
+               end--;
+            }
+            
+            j++;
+        }
+        ans[n-1]=start;
+        return ans;
+    }
+}
