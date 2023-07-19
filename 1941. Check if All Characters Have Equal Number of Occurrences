@@ -1,0 +1,17 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+        int[] freq=new int[26]; 
+        for(char c:s.toCharArray()){
+            freq[c-'a']++;   // good way to store characters
+        }
+// XOR method will not work if we have odd length string with same characters
+        int prev= freq[s.charAt(0)-'a'];
+
+        for(int n : freq){
+            if(n!=0 && n!=prev){ // the nunmers in freq should be either 0 or must have some frequency
+                return false;
+            }
+        }
+        return true;
+    }
+}
